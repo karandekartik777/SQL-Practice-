@@ -8,3 +8,14 @@ on c.id = o.customerID
 where o.id IS NULL
 
 
+
+another approach is 
+
+--------------------------------
+select c.name as Customers 
+from Customers c where 
+c.name not in (select c.name from Customers c
+inner join Orders o
+on c.id = o.customerID
+)
+
