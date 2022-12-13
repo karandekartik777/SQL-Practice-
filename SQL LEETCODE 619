@@ -1,0 +1,10 @@
+BIGGEST SINGLE NUMBER
+
+with numtable as (
+select num from MyNumbers 
+group by num 
+having count(num)=1)
+
+select case when count(num)> 1 then max(num)
+else NULL end as numm
+from numtable
