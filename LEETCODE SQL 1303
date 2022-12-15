@@ -1,0 +1,7 @@
+Write an SQL query to find the team size of each of the employees.
+
+Return result table in any order
+
+select employee_id ,count(employee_id) 
+over(partition by team_id order by employee_id) as team_size  
+from Employee
