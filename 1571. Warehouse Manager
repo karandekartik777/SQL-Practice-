@@ -81,3 +81,10 @@ LCHouse3: 1 unit of LC-T-Shirt.
 Solution 
 -------------------------------------------------
 
+select w.name as warehouse_name ,
+sum(w.units*p.Length*w.Height*w.Widht ) as volume 
+from Warehouse w inner join Products p 
+on w.product_id = p.product_id
+group by w.name
+
+
